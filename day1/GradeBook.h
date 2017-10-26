@@ -4,6 +4,10 @@ using namespace std;
 class GradeBook
 {
 public:
+  GradeBook(string name)
+  {
+    setCourseName(name);
+  }
   void setCourseName(string name)
   {
     courseName=name;                              //stores the name in the object
@@ -19,17 +23,3 @@ public:
 private:
   string courseName;
 };
-
-
-
-int main()
-{
-  string nameOfCourse;
-  GradeBook myGradeBook;
-  cout << "Initial course name is :"<<myGradeBook.getCourseName()<<endl;
-  cout <<"\n Please enter the course name :"<<endl;
-  getline(cin,nameOfCourse);
-  myGradeBook.setCourseName(nameOfCourse);
-  cout<<endl;
-  myGradeBook.displayMessage();
-}
