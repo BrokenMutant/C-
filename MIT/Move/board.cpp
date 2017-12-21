@@ -16,7 +16,7 @@ void print_();
 //a[5][5] = 'J';
 
 
-void print_(char &(a[10][10]),int size)
+void print_(char a[10][10],int size)
 {
 	int i,j;
 	for(i=0;i<size;i++)
