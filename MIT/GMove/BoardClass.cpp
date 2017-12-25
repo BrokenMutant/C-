@@ -9,7 +9,7 @@ using namespace std;
 
 //initscr();
 
-char a[20][20];
+char a[30][30];
 void print_and_clear(
 		int,int  = 0 // this will be 0 then it will not be used
 	   	);
@@ -31,25 +31,35 @@ class Board
 			{
 				for(j=0;j<size;j++)
 				{
-					if(clear == 1)
+					if(clear == 1&& i!=0 && i!=size-1 && j!=0 && j!=size-1)
 					{
 						a[i][j]=' ';
 					}
-					cout << a[i][j]<<' ';
+					if(i!=0 && i!=size-1 && j!=0 && j!=size-1)
+						cout << a[i][j]<<' ';
+					if(j==0||j==size-1)
+						cout<<"|";
+					if(i==0||i==size-1)
+						cout<<"_";
 
 				}
 				if(clear!=1)
 					cout<<endl;
 			}
 		}
-		
+		/*void print_()
+		{
+			int i;
+			for(i=0;i<=10;i++)
+				cout<<"---";
+		}*/	
 		void change_player_pos(int size,			// size
 				       char choice			//choice ''A''W''S''D'
 				       )
 		{
 		//clearing
 	        //	print_and_clear(size,1);
-		if(pos_i>=0 &&  pos_j >=0 && pos_i <=size-1 && pos_j<=size-1)
+		if(pos_i>0 &&  pos_j >0 && pos_i <size-1 && pos_j<size-1)
 		{
 			print_and_clear(size,1);		
 			if(choice=='a' || choice=='A')
@@ -73,7 +83,7 @@ int main()
 {
 	//char a[10][10];
 	a[5][5] = 'J';
-	int size = 20;              // size of the board
+	int size = 30;              // size of the board
 	//initscr();
 	Board b_obj;			// object of the Board Class
 	int i,j;
@@ -93,7 +103,7 @@ int main()
 	
 	while(choice!='q' && choice!='Q' )
 	{
-
+		//	b_obj.print_();
 		cout<<"\n press q to quit!"<<endl;
 		//nodelay(stdscr, TRUE);
 		cin>>choice;
@@ -110,9 +120,9 @@ int main()
 			 b_obj.print_and_clear(size,0);
 			 cout<<endl;
 		 }
+		//b_obj.print_();
 	}	
 
 	return 0;
 
 }
-
