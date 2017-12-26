@@ -1,6 +1,6 @@
-//#include"Dist.h"
+#include"Dist.h"
 //#include<iostream>
-#include"DistLib.cpp"
+//#include"DistLib.cpp"
 //using namespace std;
 int main()
 {
