@@ -73,6 +73,32 @@ void Animal::toString()
 		" cms tall and "<<this->weight<<" kgs in weigth "<<endl;
 }
 
+//inheritance of animal to dog class
+
+class Dog : public Animal
+{
+	private:
+		string sound = "Woof";
+
+	public:
+		void getSound(){cout<<sound<<endl;}
+		Dog(int, int, string, string);
+		Dog(): Animal(){};
+		void toString();
+
+};
+
+Dog::Dog(int height,int weight, string name, string bark):
+	Animal(height,weight,name)
+	{
+		this -> sound = bark;
+	}
+
+void Dog::toString()
+{
+	cout<<this->getName()<<" is "<<this->getHeight()<<" cms tall and "<<this->getWeight()
+		<<" kgs in weight and says"<<this->sound;
+}
 int main()
 {
 	Animal fred;
@@ -87,7 +113,15 @@ int main()
                 " cms tall and "<<tom.getWeight()<<" kgs in weight "<<endl;
 
 
+	Dog spot(38,16,"Spot","Woof");
+	
+	cout<<"No. of animals created "<<Animal::getNumOfAnimals()<<endl;
+	spot.getSound();
 
+	tom.toString();
 
+	spot.toString();
+	spot.Animal::toString();
+	//return 0;
 	return 0;
 }
