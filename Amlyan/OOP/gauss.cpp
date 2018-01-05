@@ -1,7 +1,5 @@
 #include<iostream>
 using namespace std;
-
-
 class gauss
 {
 	float a[20][20];
@@ -26,9 +24,10 @@ class gauss
 			{
 			for(int j=i+1;j<n;j++)
 			{
-				for(int k=i;k<n+1;k++)
+				float m=a[j][i]/a[i][i];
+				for(int k=0;k<n+1;k++)
 				{
-					a[j][k]=a[j][k]-a[j][i]*a[i][k]/a[i][i];
+					a[j][k]=a[j][k]-a[i][k]*m;
 				}
 			}
 			}
@@ -39,9 +38,9 @@ class gauss
 			for(int i=n-1;i>=0;i--)
 			{
 				float sum=0;
-				for(int j=i+1;j<=n;j++)
-				{
-					sum=sum+a[i][j]*x[j];
+				for(int j=0;j<=n;j++)
+				{ if(i!=j){
+					sum=sum+a[i][j]*x[j];}
 				}
 				x[i]=(a[i][n]-sum)/a[i][i];
 			}
