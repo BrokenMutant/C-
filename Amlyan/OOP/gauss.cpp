@@ -7,6 +7,27 @@ class gauss
 	int i,j;
 	float x[20];
 	public:
+		void delay()
+		{	
+			int g,h;
+			for(g=0;g<100000;g++)
+			{
+			for(h=0;h<1000;h++);
+			}
+		}
+		void print1()
+                {
+                        int i1,j1;
+                        for(i1=0;i1<n;i1++)
+                        {
+                                for(j1=0;j1<n+1;j1++)
+                                {
+                                        cout<<a[i1][j1]<<"  ";
+                                }
+                                cout<<endl<<endl;
+                        }
+                }
+
 		void input()
 		{
 			cin>>n;
@@ -29,6 +50,9 @@ class gauss
 				{
 					a[j][k]=a[j][k]-a[i][k]*m;
 				}
+				cout<<endl<<endl;
+				print1();
+				delay();
 			}
 			}
 		}
