@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cstdlib>
 using namespace std;
 int main()
 {
@@ -8,7 +9,7 @@ int main()
 		cout<<"["<<c<<"]";
 	}
 	cout<<endl;
-	return 0;
+	//return EXIT_FAILURE;
 }
 
 
