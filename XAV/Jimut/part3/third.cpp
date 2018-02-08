@@ -3,7 +3,7 @@ using namespace std;
 
 class dbc;
 class abc;
-class abc
+class abc: public dbc
 {
 	public:
 	int x,y;
@@ -13,14 +13,14 @@ class abc
 			x=1;
 			y=2;
 		}
-		friend void sum(ostream,abc);
+		friend void sum(dbc,abc);
 		
 };
 class dbc 
 {
-	public:
+	protected:
 	int a,b;
-	//public:
+	public:
 		dbc()
 		{
 			a=5;
@@ -29,9 +29,9 @@ class dbc
 	
 };
 
-void sum(ostream a1,abc b)
+void sum(dbc a1,abc b)
 {
-	a1<<b1.x;
+	cout<<a1.a+b.x;
 }
 
 
@@ -39,8 +39,8 @@ int main()
 {
 	abc a6;
 	dbc b6;
-	ostream ob;
-	sum(ob,a6);
+	//ostream ob;
+	sum(b6,a6);
 	return 0;
 }
 
