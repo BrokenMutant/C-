@@ -34,7 +34,7 @@ void space::operator-()
 **/
 space space::operator-()
 {
-	space X;	// temporary object space
+	space X;	// temporary object of class space
 	X.x = -x;
 	X.y = -y;
 	X.z = -z;
